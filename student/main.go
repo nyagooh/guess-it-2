@@ -23,7 +23,7 @@ func main() {
 		}
 		previousnumbers = append(previousnumbers, number)
 		if len(previousnumbers) > 1 {
-			a, b := m.LinearRegression(previousnumbers)
+			m, c := m.LinearRegression(previousnumbers)
 			var nextindex int
 			if len(previousnumbers) <= 5 {
 				nextindex = len(previousnumbers)
@@ -31,8 +31,8 @@ func main() {
 				previousnumbers = previousnumbers[len(previousnumbers)-5:]
 				nextindex = len(previousnumbers)
 			}
-			predictvalue := a + b*float64(nextindex)
-			margin := 20.0
+			predictvalue := m*float64(nextindex) + c
+			margin := 50.0
 			lower := math.Round(predictvalue - margin)
 			upper := math.Round(predictvalue + margin)
 			fmt.Printf("%v %v\n", lower, upper)
