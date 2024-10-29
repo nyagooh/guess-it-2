@@ -27,7 +27,7 @@
 
 To execute the program:
 ```bash
-go run main.go
+./script.sh
 ```
 Input your data in the standard input:
 ```bash
