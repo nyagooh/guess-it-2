@@ -10,6 +10,9 @@ import (
 )
 
 func main() {
+	if len(os.Args) > 1 {
+		return
+	}
 	scanner := bufio.NewScanner(os.Stdin)
 	var previousnumbers []float64
 	for scanner.Scan() {
